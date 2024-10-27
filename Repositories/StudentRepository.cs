@@ -1,14 +1,24 @@
-﻿using ModelSchool.Enums;
+﻿using Dapper;
+using ModelSchool.Enums;
 using ModelSchool.Interfaces;
 using ModelSchool.Models.Entities;
+using MySqlConnector;
 
 namespace ModelSchool.Repositories
 {
     public class StudentRepository : IStudentRepository
     {
+        private static readonly string connectionString = "Server = localhost; User ID = root; Database =modeldb; Password=Oladimeji33;";
+
         public Student AddStudent(Student student)
         {
-            throw new NotImplementedException();
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Execute("INSERT INTO Student (Id, Age, FirstName, LastName, EmailAddress, PhoneNumber, DateOfBirth, Address, Password, Gender, Level, Department) " +
+                    "VALUES (@Id, @age, @EmailAddress, @PhoneNumber, @DateOfBirth, @Address, @Password, @Gender, @Level, @department)",student);
+            }
+            return student;
         }
 
         public bool AddStudentCourses(List<StudentCourse> studentCourses)

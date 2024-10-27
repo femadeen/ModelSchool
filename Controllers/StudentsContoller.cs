@@ -1,19 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ModelSchool.Interfaces;
+using ModelSchool.Models.Entities;
 
 namespace ModelSchool.Controllers
 {
-    public class StudentsContoller : Controller
+    public class StudentsController : Controller
     {
-        private readonly IStudentRepository _studentInterface;
+        private readonly IStudentRepository _studentRepository;
 
-        public StudentsContoller(IStudentRepository studentInterface)
+        public StudentsController(IStudentRepository studentRepository)
         {
-            _studentInterface = studentInterface;
+            _studentRepository = studentRepository;
         }
-        public IActionResult Index()
+
+        [HttpPost]
+        public IActionResult AddStudent(Student student)
         {
-            return View();
+            _studentRepository.AddStudent(student);
+            return View(student);
         }
+
+
+
     }
 }
