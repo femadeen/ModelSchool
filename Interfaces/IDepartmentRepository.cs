@@ -2,7 +2,7 @@
 
 namespace ModelSchool.Interfaces
 {
-    public interface IDepartmentInterface
+    public interface IDepartmentRepository
     {
         public Department AddDepartment(Department department);
         public Department FindDepartmentById(int id);

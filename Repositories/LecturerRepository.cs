@@ -3,7 +3,7 @@ using ModelSchool.Models.Entities;
 
 namespace ModelSchool.Repositories
 {
-    public class LecturerRepository : ILecturerInterface
+    public class LecturerRepository : ILecturerRepository
     {
         public Lecturer AddLecturer(Lecturer lecturer)
         {

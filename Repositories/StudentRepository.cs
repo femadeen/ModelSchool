@@ -4,7 +4,7 @@ using ModelSchool.Models.Entities;
 
 namespace ModelSchool.Repositories
 {
-    public class StudentRepository : IStudentInterface
+    public class StudentRepository : IStudentRepository
     {
         public Student AddStudent(Student student)
         {

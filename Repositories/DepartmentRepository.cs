@@ -3,7 +3,7 @@ using ModelSchool.Models.Entities;
 
 namespace ModelSchool.Repositories
 {
-    public class DepartmentRepository : IDepartmentInterface
+    public class DepartmentRepository : IDepartmentRepository
     {
         public Department AddDepartment(Department department)
         {

@@ -2,7 +2,7 @@
 
 namespace ModelSchool.Interfaces
 {
-    public interface ICourseInterface
+    public interface ICourseRepository
     {
         public Course AddCourse(Course course);
         public Course FindCourseById(int id);

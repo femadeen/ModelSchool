@@ -3,7 +3,7 @@ using ModelSchool.Models.Entities;
 
 namespace ModelSchool.Interfaces
 {
-    public interface IStudentInterface
+    public interface IStudentRepository
     {
         public Student AddStudent(Student student);
         public Student FindStudentById(int id);

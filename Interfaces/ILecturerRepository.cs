@@ -2,7 +2,7 @@
 
 namespace ModelSchool.Interfaces
 {
-    public interface ILecturerInterface
+    public interface ILecturerRepository
     {
         public Lecturer GetLecturerByID (int employeeID);
         public Lecturer AddLecturer (Lecturer lecturer);
